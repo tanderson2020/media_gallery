@@ -1,6 +1,6 @@
 :root {/*-- Sets color variables --*/
   --prime: #222;
-  --text: #333;
+  --text: white;
   --rev-text: #EEE;
   --accent: #2E9CCA;
   --bg: #EEE;
@@ -35,7 +35,7 @@ a.nav-item {
   text-align: center; /*-- center-aligns all text inside their boxes --*/
   padding: .75em; /*-- provides padding inside menu items --*/
   margin: auto 0; /*-- centers menu text vertically --*/
-  color: var(--rev-text);
+  color: black;
   transition: color 250ms ease-in-out; /*-- specifies transition, duration, and easing --*/
 }
 a.nav-item:hover {
@@ -141,10 +141,10 @@ a.nav-item:hover {
 .indicator img {
   width: 100% !important; /*-- small images fill available space --*/
 }
-
+/* 
 img{
   width: 20%;
-}
+} */
 .active, .indicator:hover {
   opacity: 1; /*-- makes fully visible when hovered  --*/
 }
@@ -200,4 +200,106 @@ img{
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+
+/* the css for the thumbnail cards */
+.cards {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+ 
+.card {
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+ 
+.card:hover {
+  cursor: pointer;
+}
+ 
+.card img:not(:first-of-type) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+ 
+.card img.is-visible {
+  opacity: 1;
+}
+.card img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+ul{
+  list-style: none;
+}
+/* the css for the thumbnail cards end here */
+
+button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+/*-- Modal Styles --*/
+/* The Modal (background) */
+.modal {
+  display: none;/*-- hidden by default --*/
+  position: fixed; /*-- doesn't move on the screen --*/
+  z-index: 1100; /*-- sets higher than anything else so modal is in the very front --*/
+  left: 0; /*-- positions at zero pixels from the left --*/
+  top: 0; /*-- positions at zero pixels from the top --*/
+  width: 100%; /*-- fills the space --*/
+  height: 100%; /*-- fills the space --*/
+  overflow: auto; /*-- handles overflow as normal. --*/
+  background-color: rgba(10, 10, 10, .4); /*--slightly transparent--*/
+}
+.modal-content {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 1rem auto;
+  padding: 1em;
+  width: 92%;
+  border-radius: 4px;
+  animation: fadein .3s ease-in-out; /*-- sets animation properties: name, duration, easing --*/
+}
+@keyframes fadein {
+ from{transform:scale(.1);} /*-- modal grows from very small to full size--*/
+}
+.close {
+  color: var(--text);
+  font-size: 2.5em;
+  font-weight: bold;
+  position: absolute; /*-- always at the top right of the modal --*/
+  top: 5px;
+  right: 4.25%;
+  transition: all .2s ease-in;
+  text-shadow: 2px 2px 5px #FAFAFA,
+              -2px -2px 5px #FAFAFA,
+              2px -2px 5px #FAFAFA,
+              -2px 2px 5px #FAFAFA;
+}
+.close:hover,
+.close:focus {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-body {
+ display: grid;
+ grid-template-columns: 1fr; /*-- default modal grid (for mobile screens)--*/
+ grid-gap: 2em;
 }

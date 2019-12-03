@@ -15,8 +15,28 @@
               <span class="label"> <i class="fas fa-campground"></i>Home?</span>
             </a>
             <a class="nav-item" href="#">
-              <span class="label"> <i class="fas fa-cloud-upload-alt"></i>Upload? </span>
+              <span class="label card-more" data-modal="#uploadModal"> <i class="fas fa-cloud-upload-alt"></i>Upload? </span>
             </a>
+            <div id="uploadModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">File upload form</h4>
+                  </div>
+                  <div class="modal-body">
+                      <form action="upload.php" method="post" enctype="multipart/form-data">
+                        Select image to upload:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submit">
+                    </form>
+                      <div id='preview'></div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
             <a class="nav-item" href="#">
               <span class="label"> <i class="fas fa-user-secret"></i>  About Us?</span>
             </a>
@@ -56,6 +76,68 @@
   </div>
 </section>
  <main class="main-grid">
+   <div class="main-grid-item one">
+      <div class="cards">
+          <div class="card">
+            <h4 class="card-title">Old Ladies Rock Too</h4>
+            <p class="card-text">Little modern old ladies can rule too</p>
+            
+            <img src="img/cool-granny.jpg" alt="">
+            <!-- 4 more images here -->
+          </div>
+          <div class="card">
+            <h4 class="card-title">Old Ladies Rock Too</h4>
+            <p class="card-text">Little modern old ladies can rule too</p>
+            <img src="img/explosive-smoke.jpg" alt="">
+            <!-- 3 more images here -->
+          </div>
+          <div class="card">
+            <h4 class="card-title">Old Ladies Rock Too</h4>
+            <p class="card-text">Little modern old ladies can rule too</p>
+
+            <img src="img/kick-butt-granny.jpg" alt="">
+            <!-- 2 more images here -->
+          </div>
+          <div class="card">
+            <h4 class="card-title">Old Ladies Rock Too</h4>
+            <p class="card-text">Little modern old ladies can rule too</p>
+
+            <img src="img/overdone-lips.jpg" alt="">
+            <!-- 1 more image here -->
+          </div>
+          <div class="card">
+              <h4 class="card-title">Old Ladies Rock Too</h4>
+              <p class="card-text">Little modern old ladies can rule too</p>
+  
+              <img src="img/stingy-old-dude.jpg" alt="">
+              <!-- 1 more image here -->
+          </div>
+          <div class="card">
+              <h4 class="card-title">Old Ladies Rock Too</h4>
+              <p class="card-text">Little modern old ladies can rule too</p>
+    
+              <img src="img/Weird-Flex-OK.jpg" alt="">
+              <!-- 1 more image here -->
+          </div>
+          <div class="card">
+              <h4 class="card-title">Old Ladies Rock Too</h4>
+              <p class="card-text">Little modern old ladies can rule too</p>
+      
+              <img src="img/wierd-chicken.jpg" alt="">
+              <!-- 1 more image here -->
+                </div>
+          <div class="card">
+            <h4 class="card-title">Old Ladies Rock Too</h4>
+            <p class="card-text">Little modern old ladies can rule too</p>
+          
+           <img src="img/price-check-1.jpg" alt="">
+          </div>
+    
+
+
+
+        </div>
+   </div>
 
  </main>
 

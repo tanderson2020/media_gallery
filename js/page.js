@@ -51,3 +51,6 @@ $(".modal").on("click", function(e) { // sets up click function
     $(this).closest(".modal").hide(); // then hide the modal
   } // closes if-statement
 }); // closes function
+
+
+// 
